@@ -33,11 +33,13 @@
     --ink-mid:    #5C4C40;
     --ink-soft:   #8F7E70;
     --cream:      #F6F2EF;
-    --cream-dark: #EDD3C3;
-    --sand:       #EDD3C3;
-    --teal-dark:  #C08D6D;
-    --teal:       #A5754F;
-    --terracotta: #FFC6A3;
+    --cream-dark: #F4D9E3;
+    --sand:       #F1D6E0;
+    --teal-dark:  #C8136F;   /* deep guide pink - text accents */
+    --teal:       #E8137F;   /* hot guide pink - hovers, eyebrow */
+    --terracotta: #F77FB0;   /* mid guide pink - dividers, footer */
+    --pink-soft:  #FBD3E1;   /* soft guide pink - band backgrounds */
+    --pink-blush: #FDEBF2;
     --white:      #FFFFFF;
 
     --font-display: 'Cormorant Garamond', serif;
@@ -66,7 +68,7 @@
     position: fixed; top:0; left:0; right:0; z-index:100;
     padding: 1.1rem 2rem;
     display:flex; align-items:center; justify-content:space-between;
-    background: rgba(246,242,233,0.9);
+    background: rgba(246,242,239,0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--sand);
   }
@@ -119,6 +121,49 @@
   .cred-num{ font-family:var(--font-display); font-size:2.6rem; font-weight:700; line-height:1; color:var(--teal-dark); }
   .cred-label{ font-size:0.82rem; color:var(--ink-soft); letter-spacing:0.02em; margin-top:0.3rem; }
 
+  /* ── NEXT MEETUP ─────────────────────────────────── */
+  .meetup{
+    margin-top: 1.9rem;
+    max-width: 440px;
+    display:flex; align-items:center; gap:18px;
+    background: var(--pink-blush);
+    border: 1.5px solid var(--terracotta);
+    border-radius: 16px;
+    padding: 16px 18px;
+  }
+  .meetup-date{
+    flex:0 0 auto;
+    width:64px; text-align:center;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 8px 0 6px;
+    border: 1px solid var(--sand);
+  }
+  .meetup-date .m{ display:block; font-size:0.72rem; font-weight:600; color: var(--teal); }
+  .meetup-date .d{ display:block; font-family:var(--font-display); font-size:2rem; font-weight:700; line-height:1; color: var(--ink); }
+  .meetup-text{ flex:1 1 180px; min-width:0; }
+  .meetup-kicker{ font-size:0.8rem; font-weight:600; color: var(--teal-dark); margin-bottom:2px; }
+  .meetup-when{ font-family:var(--font-display); font-size:1.3rem; font-weight:600; line-height:1.15; }
+  .meetup-sub{ font-size:0.8rem; color: var(--ink-mid); margin-top:3px; line-height:1.45; }
+  .meetup-btn{
+    flex:0 0 auto;
+    background: var(--teal);
+    color: var(--white);
+    text-decoration:none;
+    font-weight:600; font-size:0.84rem;
+    padding: 10px 16px;
+    border-radius: 30px;
+    transition: background .15s ease;
+  }
+  .meetup-btn:hover{ background: var(--teal-dark); }
+  .meetup-btn:focus-visible, .pass:focus-visible, .link:focus-visible{ outline: 2px solid var(--teal); outline-offset: 2px; }
+  @media (max-width: 480px){
+    .meetup{ flex-wrap:wrap; }
+    .meetup-btn{ flex-basis:100%; text-align:center; }
+    .hero-credentials{ gap:1.4rem; }
+    .cred-num{ font-size:2.2rem; }
+  }
+
   .hero-right{
     position:relative;
     display:flex; align-items:flex-end; justify-content:center;
@@ -130,7 +175,7 @@
     aspect-ratio: 3/4;
     border-radius: 14px 14px 0 0;
     overflow:hidden;
-    box-shadow: 0 24px 48px rgba(31,78,72,0.22);
+    box-shadow: 0 24px 48px rgba(200,19,111,0.18);
     border: 1px solid var(--sand);
   }
   .hero-photo-frame img{
@@ -170,12 +215,12 @@
   }
   .section-band.band-b{
     background:
-      radial-gradient(circle, rgba(50,41,35,0.06) 1px, transparent 1.2px) 0 0/16px 16px,
-      var(--teal-dark);
+      radial-gradient(circle, rgba(232,19,127,0.10) 1px, transparent 1.2px) 0 0/16px 16px,
+      var(--pink-soft);
   }
   .section-band.band-b .section-label{ color: var(--ink); }
   .section-band.band-b .photo-note{ color: rgba(50,41,35,0.72); }
-  .section-band.band-b .divider{ background: var(--ink); }
+  .section-band.band-b .divider{ background: var(--teal); }
 
   .section-inner{
     max-width: 640px;
@@ -212,7 +257,7 @@
   }
   .pass:hover{
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(34,40,31,0.09);
+    box-shadow: 0 14px 30px rgba(200,19,111,0.12);
     border-color: var(--teal);
   }
   .pass-icon{
@@ -241,7 +286,7 @@
   }
   .link:hover{
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(34,40,31,0.07);
+    box-shadow: 0 8px 20px rgba(200,19,111,0.10);
     border-color: var(--teal);
   }
   .link svg{ width:16px; height:16px; flex:0 0 auto; color: var(--ink-soft); }
@@ -365,6 +410,17 @@
       <div class="cred"><span class="cred-num">10</span><span class="cred-label">Solo trips taken</span></div>
       <div class="cred"><span class="cred-num">1+</span><span class="cred-label">Year living abroad</span></div>
     </div>
+
+    <!-- NEXT MEETUP - update the date, month and line below each month -->
+    <div class="meetup">
+      <div class="meetup-date" aria-hidden="true"><span class="m">Nov</span><span class="d">21</span></div>
+      <div class="meetup-text">
+        <p class="meetup-kicker">Next Bangkok meetup</p>
+        <p class="meetup-when">Saturday 21st November</p>
+        <p class="meetup-sub">Full details go to the WhatsApp community first.</p>
+      </div>
+      <a class="meetup-btn" href="https://forms.gle/3uEhFudmPzbMCN5K6" onclick="trackClick('Meetup - Save my spot')" target="_blank" rel="noopener">Save my spot</a>
+    </div>
   </div>
   <div class="hero-right">
     <div class="hero-photo-frame">
@@ -399,23 +455,12 @@
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
     </div>
     <div class="pass-text">
-      <div class="pass-title">Free: Solo Travel Confidence Guide</div>
-      <div class="pass-sub">Packing tips, mindset shifts, and practical advice</div>
+      <div class="pass-title">Free guide: From Scared to Confident</div>
+      <div class="pass-sub">The fears, safety tips and first steps I wish I'd had before my first solo trip</div>
     </div>
     <div class="pass-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="pass" href="https://tr.ee/tCUXKcc5Cq"
-     onclick="trackClick('Book a 1:1 Call')" target="_blank" rel="noopener">
-    <div class="pass-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    </div>
-    <div class="pass-text">
-      <div class="pass-title">Book a 1:1 Solo Travel Confidence Call</div>
-      <div class="pass-sub">Planning, mindset, and reassurance for your trip</div>
-    </div>
-    <div class="pass-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-  </a>
   </div>
 </section>
 
