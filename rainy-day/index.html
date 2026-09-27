@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rainy Day in Bangkok | Always Go Anywhere</title>
+<meta name="description" content="Things to do in Bangkok when it's raining, from someone that actually lives here. Indoor activities with booking links, plus free things to do.">
+
+<!-- Click tracking (optional).
+     Google Analytics just counts how many people tap each Book button.
+     If you use it on your main hub page, copy the ID from that page (it looks like G-AB12CD34EF)
+     and paste it between the quotes below. Leave it as it is and nothing is tracked, and nothing breaks. -->
+<script>
+  var GA_ID = 'G-XXXXXXXXXX';
+  if (GA_ID !== 'G-XXXXXXXXXX') {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+  function trackClick(label){
+    if (typeof window.gtag === 'function') { gtag('event', 'link_click', { link_name: 'Rainy day - ' + label }); }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:        #322923;
+    --ink-mid:    #5C4C40;
+    --ink-soft:   #8F7E70;
+    --cream:      #F6F2EF;
+    --sand:       #F1D6E0;
+    --pink-deep:  #C8136F;
+    --pink-hot:   #E8137F;
+    --pink-mid:   #F77FB0;
+    --pink-soft:  #FBD3E1;
+    --pink-blush: #FDEBF2;
+    --white:      #FFFFFF;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* TOP BAR */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--sand);
+    background: rgba(246,242,239,0.94);
+    position: sticky; top:0; z-index:10;
+    backdrop-filter: blur(8px);
+  }
+  .brand{
+    display:flex; align-items:center; gap:9px;
+    font-family: var(--font-display); font-weight:600; font-size:1.1rem;
+    color: var(--pink-deep); text-decoration:none;
+  }
+  .brand img{ height:28px; width:auto; display:block; }
+  .back{
+    font-size:0.82rem; font-weight:500; color: var(--ink-mid);
+    text-decoration:none; white-space:nowrap;
+  }
+  .back:hover{ color: var(--pink-deep); }
+
+  /* HERO */
+  .hero{
+    background:
+      radial-gradient(circle, rgba(232,19,127,0.10) 1px, transparent 1.2px) 0 0/16px 16px,
+      var(--pink-soft);
+    padding: 0 0 40px;
+  }
+  .hero-img{ display:block; width:100%; height: 220px; object-fit: cover; }
+  .hero-inner{ max-width: 620px; margin: 0 auto; text-align: center; padding: 44px 20px 0; }
+  .book + .book{ margin-left: 6px; }
+  .hero-kicker{ font-size:0.85rem; font-weight:600; color: var(--pink-deep); margin-bottom:10px; }
+  .hero h1{
+    font-family: var(--font-display);
+    font-weight:700;
+    font-size: clamp(2.3rem, 7vw, 3.4rem);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 .aside{
+    display:block;
+    font-style: italic; font-weight:600;
+    font-size: 0.5em;
+    color: var(--pink-deep);
+    margin-top: 10px;
+    letter-spacing:0;
+  }
+  .hero-sub{ margin: 16px auto 0; font-size:0.98rem; color: var(--ink-mid); max-width: 520px; }
+
+  /* DISCLOSURE */
+  .disclosure{ max-width: 620px; margin: 22px auto 0; padding: 0 20px; }
+  .disclosure p{
+    text-align: center;
+    font-size:0.8rem; color: var(--ink-mid);
+    background: var(--white);
+    border-left: 3px solid var(--pink-mid);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 14px;
+  }
+
+  /* LIST */
+  main{ max-width: 620px; margin: 0 auto; padding: 30px 20px 36px; }
+  .section-title{
+    font-family: var(--font-display); font-style: italic; font-weight:600;
+    font-size: 1.9rem; margin: 26px 0 14px;
+  }
+  main > .section-title:first-child{ margin-top: 10px; }
+  ol.activities{ list-style:none; counter-reset: act; }
+  .act{
+    counter-increment: act;
+    display:grid;
+    grid-template-columns: 44px 1fr;
+    gap: 4px 14px;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 14px;
+    padding: 16px 16px 16px 14px;
+    margin-bottom: 12px;
+  }
+  .act::before{
+    content: counter(act);
+    grid-column: 1; grid-row: 1 / span 4;
+    font-family: var(--font-display); font-weight:700;
+    font-size: 2rem; line-height:1;
+    color: var(--pink-hot);
+    text-align:center;
+    padding-top: 2px;
+  }
+  .act > *{ grid-column: 2; }
+  .act h3{ font-family: var(--font-display); font-weight:700; font-size:1.3rem; line-height:1.15; }
+  .act p{ font-size:0.9rem; color: var(--ink-mid); }
+  .act .note{ font-size:0.78rem; color: var(--pink-deep); font-weight:500; margin-top:2px; }
+  .act-foot{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    margin-top: 10px; flex-wrap: wrap;
+  }
+  .via{ font-size:0.75rem; color: var(--ink-soft); }
+  .book{
+    background: var(--pink-hot); color: var(--white);
+    text-decoration:none; font-weight:600; font-size:0.86rem;
+    padding: 9px 20px; border-radius: 30px;
+    transition: background .15s ease;
+  }
+  .book:hover{ background: var(--pink-deep); }
+  .book:focus-visible, .back:focus-visible, .brand:focus-visible, .hub-link:focus-visible, .free-list a:focus-visible{
+    outline: 2px solid var(--pink-hot); outline-offset: 3px;
+  }
+
+  /* JUST TURN UP + FREE */
+  .free-list{
+    list-style:none;
+    background: var(--pink-blush);
+    border: 1.5px solid var(--pink-mid);
+    border-radius: 14px;
+    padding: 6px 18px;
+  }
+  .free-list li{
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--pink-mid);
+    font-size:0.92rem; color: var(--ink-mid);
+  }
+  .free-list li:last-child{ border-bottom:none; }
+  .free-list strong{ color: var(--ink); font-weight:600; }
+  .free-list strong a{ color: var(--ink); text-decoration-color: var(--pink-mid); text-underline-offset: 3px; }
+  .free-list p{ margin-top: 3px; }
+  .free-list .when{ display:block; margin-top:4px; font-size:0.78rem; color: var(--pink-deep); font-weight:500; }
+
+  .tip{ margin: 26px 0 8px; font-size:0.88rem; color: var(--ink-mid); }
+
+  /* FOOTER */
+  .end{ max-width:620px; margin: 24px auto 0; padding: 0 20px 36px; text-align:center; }
+  .hub-link{
+    display:inline-block;
+    border: 1.5px solid var(--pink-hot); color: var(--pink-deep);
+    text-decoration:none; font-weight:600; font-size:0.9rem;
+    padding: 11px 22px; border-radius: 30px;
+  }
+  .hub-link:hover{ background: var(--pink-blush); }
+  footer{ background: var(--ink); padding: 26px 20px; text-align:center; }
+  footer .fb{ font-family: var(--font-display); font-size:1.1rem; color: var(--pink-mid); }
+  footer .ft{ font-size:0.72rem; color: rgba(246,242,239,0.6); margin-top:4px; }
+  footer a{ color: var(--pink-mid); text-decoration:none; }
+
+  @media (max-width: 420px){
+    .act{ grid-template-columns: 34px 1fr; gap: 4px 10px; }
+    .act::before{ font-size:1.7rem; }
+    .book{ flex: 1 1 100%; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="../">
+    <img src="../photos/aga-travel-logo.png" alt="">
+    Always Go Anywhere
+  </a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">Rainy day in Bangkok</p>
+    <h1>Things to do in Bangkok when it's raining
+      <span class="aside">(from someone that actually lives here)</span>
+    </h1>
+    <p class="hero-sub">Some cheap, some a treat, some free, and most of them easy to do on your own. Tap "Book" to see times and prices.</p>
+  </div>
+</section>
+
+<div class="disclosure">
+  <p>Some of the links on this page are affiliate links, which means I may earn a small commission if you book through them, at no extra cost to you.</p>
+</div>
+
+<main>
+  <h2 class="section-title">Book ahead</h2>
+
+  <!-- To change the order, move a whole <li class="act"> block. The numbers update themselves. -->
+  <ol class="activities">
+
+    <li class="act">
+      <h3>Muay Thai at Rajadamnern Stadium</h3>
+      <p>A historic stadium that has been running fights since 1945, and it's a weather-protected venue, so the rain doesn't matter.</p>
+      <p class="note">These tickets are non-refundable, so double-check your date.</p>
+      <div class="act-foot">
+        <span class="via">via GetYourGuide</span>
+        <a class="book" href="https://www.getyourguide.com/bangkok-l169/bangkok-muay-thai-boxing-tickets-at-rajadamnern-stadium-t505196/?partner_id=UN11IFU&amp;currency=GBP&amp;travel_agent=1&amp;cmp=share_to_earn" onclick="trackClick('Muay Thai')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Thai cooking class</h3>
+      <p>Cook a few Thai dishes, then sit down and eat them. A class is an easy way to meet people if you're on your own.</p>
+      <div class="act-foot">
+        <span class="via">via Viator</span>
+        <a class="book" href="https://viator.tpx.lv/MvrPuPmJ" onclick="trackClick('Cooking Class')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Japanese onsen</h3>
+      <p>Hot baths and nowhere to be. A very good way to spend a grey afternoon.</p>
+      <div class="act-foot">
+        <span class="via">via Viator</span>
+        <a class="book" href="https://viator.tpx.lv/uW5ikqwI" onclick="trackClick('Onsen')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Spa day</h3>
+      <p>Book a proper spa day and let the rain do its thing outside.</p>
+      <div class="act-foot">
+        <span class="via">via Klook</span>
+        <a class="book" href="https://klook.tpx.lv/DHBmZxgQ" onclick="trackClick('Spa Day')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Cave Fantasy at MBK Center</h3>
+      <p>Digital art, lights and glasses-free 3D across themed galleries, and great for photos. It's inside MBK, right by the BTS.</p>
+      <div class="act-foot">
+        <span class="via">via Klook</span>
+        <a class="book" href="https://klook.tpx.lv/mXpDjW3H" onclick="trackClick('Cave Fantasy')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Jurassic World: The Experience</h3>
+      <p>Life-sized dinosaurs and movie-inspired zones at Asiatique The Riverfront. Completely silly, and exactly what a wet afternoon needs.</p>
+      <div class="act-foot">
+        <span class="via">via Klook</span>
+        <a class="book" href="https://klook.tpx.lv/hStJRODa" onclick="trackClick('Jurassic World')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Space &amp; Time Cube</h3>
+      <p>More than 20 immersive light and digital zones, all indoors. It's out at Seacon Bangkae, so save it for a full afternoon.</p>
+      <div class="act-foot">
+        <span class="via">via Klook</span>
+        <a class="book" href="https://klook.tpx.lv/gkIz7LFs" onclick="trackClick('Space and Time Cube')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>MOCA Bangkok</h3>
+      <p>The Museum of Contemporary Art: five floors of Thai art. It's north of the centre, so get a Grab.</p>
+      <div class="act-foot">
+        <span class="via">via Klook</span>
+        <a class="book" href="https://klook.tpx.lv/8Buc6Jpm" onclick="trackClick('MOCA Museum')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Akara Sky Hanuman</h3>
+      <p>A Thai cultural rooftop with 360-degree views over Bangkok and a mirrored observatory. There's an air-conditioned sky dome cinema too, plus nightly Thai dance and Muay Thai shows.</p>
+      <div class="act-foot">
+        <span class="via">via Klook</span>
+        <a class="book" href="https://klook.tpx.lv/i3S9a6zi" onclick="trackClick('Akara Sky Hanuman')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Head spa</h3>
+      <p>A scalp massage and hair wash in one, and a lovely way to switch off.</p>
+      <div class="act-foot">
+        <span class="via">via Klook</span>
+        <a class="book" href="https://klook.tpx.lv/TDiv8A9N" onclick="trackClick('Head Spa')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Cinema</h3>
+      <p>A film is the easiest way to spend a few dry hours, and both chains are in most big malls. Book your seat first.</p>
+      <div class="act-foot">
+        <span class="via">Major or SF Cinema</span>
+        <span>
+          <a class="book" href="https://www.majorcineplex.com/home/" onclick="trackClick('Cinema - Major')" target="_blank" rel="noopener">Major</a>
+          <a class="book" href="https://www.sfcinema.com/en" onclick="trackClick('Cinema - SF')" target="_blank" rel="noopener">SF Cinema</a>
+        </span>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Escape room at MBK Center</h3>
+      <p>Grab a friend or a group of new people and get locked in a room. Book a slot before you go.</p>
+      <div class="act-foot">
+        <span class="via">Find one on the map</span>
+        <a class="book" href="https://maps.app.goo.gl/x84qDqVVzDeBwr5X7" onclick="trackClick('Escape room map')" target="_blank" rel="noopener">See options</a>
+      </div>
+    </li>
+
+    <li class="act">
+      <h3>Airport lounge</h3>
+      <p>If you're flying out, head to the airport early and check into the airport lounge instead of waiting at the gate.</p>
+      <div class="act-foot">
+        <span class="via">via GetYourGuide</span>
+        <a class="book" href="https://www.getyourguide.com/bangkok-l169/bkk-airport-domestic-international-coral-lounge-access-t1077683/?partner_id=UN11IFU&amp;currency=GBP&amp;cmp=share_to_earn&amp;cmp=CL&amp;cmp=CL" onclick="trackClick('Airport Lounge')" target="_blank" rel="noopener sponsored">Book</a>
+      </div>
+    </li>
+
+  </ol>
+
+  <h2 class="section-title">Free things to do</h2>
+  <ul class="free-list">
+    <li>
+      <strong><a href="https://www.google.com/maps/search/Bangkok+Art+and+Culture+Centre" onclick="trackClick('Free - BACC')" target="_blank" rel="noopener">Bangkok Art &amp; Culture Centre (BACC)</a></strong>
+      <p>Nine floors of contemporary art, with quirky craft shops, an art library and cafes on the lower floors. A skywalk links it to BTS National Stadium, so you can get there without an umbrella.</p>
+      <span class="when">Free to enter. Open Tuesday to Sunday, 10am to 8pm. A few special exhibitions may charge.</span>
+    </li>
+    <li>
+      <strong><a href="https://www.google.com/maps/search/Bangkok+Kunsthalle" onclick="trackClick('Free - Kunsthalle')" target="_blank" rel="noopener">Bangkok Kunsthalle</a></strong>
+      <p>A raw, industrial contemporary art space in Chinatown, near Hua Lamphong MRT. Installations built around shadows, echoes and neon, with a small cafe to dry off in.</p>
+      <span class="when">Free to enter. Open Wednesday to Sunday, 2pm to 8pm.</span>
+    </li>
+    <li>
+      <strong><a href="https://www.google.com/maps/search/Bangkokian+Museum+Bangkok" onclick="trackClick('Free - Bangkokian Museum')" target="_blank" rel="noopener">Bangkokian Museum</a></strong>
+      <p>Old wooden heritage houses in Bang Rak showing how Bangkok families lived in the 1940s and 1950s. Peaceful, and it feels like stepping back in time. Dress modestly.</p>
+      <span class="when">Free to enter. Open Tuesday to Sunday, 10am to 4pm.</span>
+    </li>
+    <li>
+      <strong><a href="https://www.google.com/maps/search/Talad+Noi+Museum+Bangkok" onclick="trackClick('Free - Talad Noi Museum')" target="_blank" rel="noopener">Talad Noi Museum</a></strong>
+      <p>A small community museum in one of Bangkok's oldest neighbourhoods, with historic photos and objects from the area's Thai-Chinese heritage. A good place to duck into while you're wandering Chinatown's narrow alleys.</p>
+      <span class="when">Free to enter. Check opening hours before you go.</span>
+    </li>
+    <li>
+      <strong><a href="https://www.google.com/maps/search/SookSiam+ICONSIAM+Bangkok" onclick="trackClick('Free - SookSiam')" target="_blank" rel="noopener">SookSiam at ICONSIAM</a></strong>
+      <p>An indoor Thai floating market on the ground floor of the mall. It's free to wander round the pavilions and canals, and only the food costs money.</p>
+    </li>
+  </ul>
+
+  <h2 class="section-title">Shopping malls</h2>
+  <ul class="free-list">
+    <li>
+      <strong><a href="https://maps.app.goo.gl/BUG3agsVuzTEGA6d6" onclick="trackClick('Mall - CentralWorld')" target="_blank" rel="noopener">CentralWorld</a></strong>
+      <p>A huge mall on Rama I Road in the middle of the shopping district. Somewhere to wander for hours while it pours.</p>
+    </li>
+    <li>
+      <strong><a href="https://maps.app.goo.gl/mbibZGc6GmnZAYqm6" onclick="trackClick('Mall - Terminal 21')" target="_blank" rel="noopener">Terminal 21</a></strong>
+      <p>An easy rainy-day stop on Sukhumvit, right by the BTS.</p>
+    </li>
+    <li>
+      <strong><a href="https://maps.app.goo.gl/pMWhA2H84eV9batJ8" onclick="trackClick('Mall - ICONSIAM')" target="_blank" rel="noopener">ICONSIAM</a></strong>
+      <p>A riverside mall with the SookSiam indoor floating market on the ground floor.</p>
+    </li>
+    <li>
+      <strong><a href="https://maps.app.goo.gl/d55iTcTd9gzBXmtp9" onclick="trackClick('Mall - Siam Paragon')" target="_blank" rel="noopener">Siam Paragon</a></strong>
+      <p>A big central mall on Rama I Road, right by the BTS at Siam.</p>
+    </li>
+  </ul>
+  <p class="tip" style="margin-top:12px;">Walking around is free. You only pay if you buy something.</p>
+
+  <p class="tip">Flooding varies a lot by area, so check your route before you head out. The BTS and MRT are usually the easiest ways to get around when it's pouring.</p>
+</main>
+
+<footer>
+  <div class="fb">Always Go Anywhere</div>
+  <div class="ft">Made with ✈️ by Abi &middot; <a href="https://www.instagram.com/always.go.anywhere" target="_blank" rel="noopener">@always.go.anywhere</a></div>
+</footer>
+
+</body>
+</html>
